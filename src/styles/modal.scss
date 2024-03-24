@@ -1,0 +1,107 @@
+@use "sass:color";
+
+#iew-modal-wrapper {
+    position: fixed;
+    inset: 0;
+    z-index: 10001;
+    background-color: rgba(0, 0, 0, 10%);
+
+    .iew-modal {
+        position: absolute;
+        max-width: 96%;
+        min-height: 10em;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border: 1px solid #acacac;
+        background-color: #fdfdfd;
+        box-shadow: 0 0 10px rgba(127, 127, 127, 60%);
+
+        &.iew-modal-small {
+            width: 300px;
+        }
+
+        &.iew-modal-medium {
+            width: 540px;
+        }
+
+        &.iew-modal-large {
+            width: 960px;
+        }
+
+        &.iew-modal-larger {
+            width: 14400px;
+        }
+
+        .iew-modal-close {
+            position: absolute;
+            top: 0;
+            right: 0;
+            box-sizing: border-box;
+            width: 28px;
+            height: 28px;
+            padding: 2px;
+            cursor: pointer;
+
+            &:hover {
+                background-color: #ebebeb;
+            }
+
+            > svg {
+                width: 24px;
+                height: 24px;
+            }
+        }
+
+        .iew-modal-header {
+            padding: 0.5em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.1em;
+            font-weight: 600;
+        }
+
+        .iew-modal-content {
+            padding: 1em;
+        }
+
+        .iew-modal-footer {
+            padding: 8px 12px;
+            text-align: right;
+        }
+    }
+
+    .iew-modal-button {
+        $normal-color: #fcfcfc;
+        $primary-color: #66d;
+
+        display: inline-block;
+        box-sizing: border-box;
+        height: 32px;
+        padding: 6px 10px;
+        margin-left: 12px;
+        font-size: 12px;
+        line-height: 1;
+        background-color: $normal-color;
+        border: 1px solid #b9b9b9;
+        border-radius: 0;
+        user-select: none;
+        white-space: nowrap;
+
+        &:hover {
+            background-color: color.scale($normal-color, $lightness: -5%);
+        }
+
+        &.iew-modal-button-confirm {
+            color: #fff;
+            background-color: $primary-color;
+            border: 1px solid $primary-color;
+
+            &:hover {
+                border-color: color.scale($primary-color, $lightness: 15%);
+                background-color: color.scale($primary-color, $lightness: 15%);
+            }
+        }
+    }
+}

@@ -1,0 +1,19 @@
+.itg-web-enhancer-copy-docker {
+    float: right;
+    border: 1px solid #bbb;
+    padding: 8px;
+    background-color: #f8f8f8;
+    position: sticky;
+    top: 50px;
+    right: 0;
+    cursor: pointer;
+    transition: 0.3s all ease-in;
+
+    &:hover {
+        box-shadow: 0 0 4px rgba(0, 0, 0, 20%);
+    }
+
+    &:active {
+        background-color: #e9e9e9;
+    }
+}
