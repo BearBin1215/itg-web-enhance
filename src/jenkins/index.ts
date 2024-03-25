@@ -7,7 +7,7 @@ import { throttle } from 'lodash-es';
 import './index.scss';
 
 const parseDockerLink = (logText: string) => {
-  return logText.match(/imageName *= *(itg-dtc-docker\.pkg\.coding\.net\/.*\d+)\n?/)?.[1];
+  return logText.match(/(?:imageName|image_name_date) *= *(itg-dtc-docker\.pkg\.coding\.net\/.*\d+|docker-registry\.itg\.com\.cn\/.*\d+)\n?/)?.[1];
 };
 
 /** 控制台页面添加复制链接按钮 */
