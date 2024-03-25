@@ -6,6 +6,7 @@ import createModal from '@/utils/modal';
 import './index.scss';
 
 const rancher = () => {
+  document.body.classList.add('iew-rancher');
   /** 快速搜索面板 */
   const quickSearchPanel = createElement('<div id="iew-rancher-search-panel"></div>');
   /** 快速搜索按钮区 */

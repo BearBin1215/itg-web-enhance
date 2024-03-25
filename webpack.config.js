@@ -50,26 +50,29 @@ module.exports = (_, argv) => {
             },
           },
         },
+
+        // css文件直接通过raw-loader载入
         {
           test: /\.css$/i,
-          use: [
-            'style-loader',
-            'css-loader',
-            postCssLoader,
+          oneOf: [
+            {
+              issuer: /\.ts$/,
+              type: 'asset/source',
+            },
           ],
         },
         {
           test: /\.s[ac]ss$/i,
           use: [
-            'style-loader', // 开发模式下使用style-loader
+            'style-loader',
             'css-loader',
             postCssLoader,
             'sass-loader',
           ],
         },
         {
-          test: /\.(png|jpe?g|gif)/,
-          type: 'asset/resource',
+          test: /\.(svg|png|jpe?g|gif)$/,
+          type: 'asset',
         },
       ],
     },

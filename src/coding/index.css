@@ -1,0 +1,12 @@
+/* stylelint-disable selector-class-pattern */
+[data-frontend-module-container="coding-project-management-frontend"] .cuk-modal [class*="style_editor-with-no-border"][class*="editor-height"] {
+    height: 520px !important;
+}
+
+[data-frontend-module-container="coding-project-management-frontend"] .newfilter-dropdown {
+    max-height: 480px !important;
+}
+
+.t-popup__content.t-popup__content--arrow {
+    padding: 1em;
+}

@@ -17,7 +17,7 @@ const jenkins = () => {
       if (dockerLink && document.getElementById('main-panel')) {
         clearInterval(interval);
         let buttonTimeout: NodeJS.Timeout;
-        const copyButton = createElement('<button class="itg-web-enhancer-copy-docker">复制docker链接</button>') as HTMLButtonElement;
+        const copyButton = createElement('<button class="iew-copy-docker">复制docker链接</button>') as HTMLButtonElement;
         document.getElementById('main-panel')!.prepend(copyButton);
         copyButton.addEventListener('click', (event) => {
           const target = event.target as HTMLButtonElement;
