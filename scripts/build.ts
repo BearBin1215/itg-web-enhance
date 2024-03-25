@@ -16,6 +16,7 @@ const userScriptBanner = `
 // @match           *://docker.itg.com.cn/*
 // @match           *://jenkins.itg.it.org.test/*
 // @match           *://oa.itg.cn/*
+// @match           *://itg-dtc.coding.net/*
 // @grant           none
 // ==/UserScript==
 `.trim();
