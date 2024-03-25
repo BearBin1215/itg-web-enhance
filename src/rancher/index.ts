@@ -156,7 +156,11 @@ const rancher = () => {
   const interval = setInterval(() => {
     // 持续检测页面直到搜索框加载出来
     const actionsHeader = document.querySelector('.fixed-header-actions.row.clearfix');
-    if (actionsHeader && !document.getElementById('iew-rancher-search-panel')) {
+    if (
+      actionsHeader
+      && !document.getElementById('iew-rancher-search-panel')
+      && document.querySelector('section.instances')
+    ) {
       initialPanel();
       clearInterval(interval);
     }
