@@ -2,9 +2,9 @@ import webpack from 'webpack';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import chalk from 'chalk';
+import fs from 'fs-extra';
 import webpackConfig from '../webpack.config.js';
 import packageJson from '../package.json' assert { type: 'json' };
-import fs from 'fs-extra';
 
 const userScriptBanner = `
 // ==UserScript==
@@ -13,10 +13,7 @@ const userScriptBanner = `
 // @version         ${packageJson.version}
 // @author          BearBin
 // @license         MIT
-// @match           *://docker.itg.com.cn/*
-// @match           *://jenkins.itg.it.org.test/*
-// @match           *://oa.itg.cn/*
-// @match           *://itg-dtc.coding.net/*
+${packageJson.tampermonkeyMatches.map((match) => `// @match           ${match}`).join('\n')}
 // @grant           none
 // ==/UserScript==
 `.trim();

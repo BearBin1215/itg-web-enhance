@@ -1,13 +1,13 @@
 // ==UserScript==
 // @name            itg-web-enhance
 // @description     ITG相关页面（OA、Rancher等）加强
-// @version         1.1.0
+// @version         1.1.1
 // @author          BearBin
 // @license         MIT
 // @match           *://docker.itg.com.cn/*
+// @match           *://itg-dtc.coding.net/*
 // @match           *://jenkins.itg.it.org.test/*
 // @match           *://oa.itg.cn/*
-// @match           *://itg-dtc.coding.net/*
 // @grant           none
 // ==/UserScript==
 

@@ -1,7 +1,7 @@
 {
   "name": "itg-web-enhance",
-  "version": "1.1.0",
-  "description": "Tampermonkey plugin for ITG webpages",
+  "version": "1.1.1",
+  "description": "Enhancement script for ITG webpages",
   "main": "dist/itg-web-enhance.user.js",
   "repository": "https://github.com/BearBin1215/itg-web-enhance.git",
   "author": "BearBin",
@@ -11,7 +11,7 @@
   ],
   "scripts": {
     "start": "webpack --watch --mode development",
-    "build": "ts-node --esm scripts/build.ts"
+    "build": "tsx scripts/build.ts"
   },
   "engines": {
     "node": ">=16.14.0"
@@ -43,7 +43,7 @@
     "stylelint-config-standard-scss": "11.1.0",
     "stylelint-scss": "5.3.2",
     "ts-loader": "^9.5.1",
-    "ts-node": "^10.9.2",
+    "tsx": "^4.7.1",
     "typescript": "^5.4.3",
     "webpack": "^5.91.0",
     "webpack-cli": "^5.1.4"
@@ -51,5 +51,15 @@
   "dependencies": {
     "classnames": "^2.5.1",
     "lodash-es": "^4.17.21"
-  }
+  },
+  "tampermonkeyMatches": [
+    "*://docker.itg.com.cn/*",
+    "*://itg-dtc.coding.net/*",
+    "*://jenkins.itg.it.org.test/*",
+    "*://oa.itg.cn/*"
+  ],
+  "keywords": [
+    "userscript",
+    "tampermonkey"
+  ]
 }
