@@ -2,7 +2,7 @@ name: 发布到npmjs
 
 on:
   release:
-    types: [created]
+    types: [published]
   workflow_dispatch:
 
 jobs:
