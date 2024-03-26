@@ -52,7 +52,21 @@ module.exports = (_, argv) => {
         },
         {
           test: /\.css$/i,
-          type: 'asset/source', // css文件作为文本导入
+          oneOf: [
+            {
+              assert: {
+                type: 'string',
+              },
+              type: 'asset/source', // css文件作为文本导入
+            },
+            {
+              use: [
+                'style-loader',
+                'css-loader',
+                postCssLoader,
+              ],
+            },
+          ],
         },
         {
           test: /\.s[ac]ss$/i,
