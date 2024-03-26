@@ -1,7 +1,7 @@
 const path = require('path');
 const TerserPlugin = require('terser-webpack-plugin');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
-const svgToMiniDataURI = require('mini-svg-data-uri');
+const svgToTinyDataUri = require('mini-svg-data-uri');
 const packageJson = require('./package.json');
 
 /** 从package.json中读取输出文件的路径和文件名 */
@@ -80,10 +80,20 @@ module.exports = (_, argv) => {
         },
         {
           test: /\.svg/,
-          type: 'asset/inline',
-          generator: {
-            dataUrl: (content) => svgToMiniDataURI(content.toString()),
-          },
+          oneOf: [
+            {
+              assert: {
+                type: 'xml',
+              },
+              type: 'asset/source',
+            },
+            {
+              type: 'asset/inline',
+              generator: {
+                dataUrl: (content) => svgToTinyDataUri(content.toString()),
+              },
+            },
+          ],
         },
         {
           test: /\.(png|jpe?g|gif)$/,

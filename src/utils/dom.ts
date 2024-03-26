@@ -31,31 +31,6 @@ const createNode = <T extends keyof HTMLElementTagNameMap>(
 };
 
 /**
- * 创建一个SVG元素
- * @param attrs 元素属性
- * @param children 子元素
-  */
-const createSVG = (
-  /** 元素属性 */
-  attrs?: Record<string, string>,
-  /** 子元素 */
-  children?: string | Node | (string | Node)[],
-) => {
-  const element = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-  for (const key in attrs) {
-    if (Object.prototype.hasOwnProperty.call(attrs, key)) {
-      element.setAttribute(key, attrs[key]);
-    }
-  }
-  if (Array.isArray(children)) {
-    element.append(...children);
-  } else if (children) {
-    element.append(children);
-  }
-  return element;
-};
-
-/**
  * 添加样式
  *
  * @param styles 样式表内容
@@ -64,4 +39,4 @@ const addStyle = (styles: string) => {
   document.head.append(createElement(`<style>${styles}</style>`));
 };
 
-export { createElement, createNode, createSVG, addStyle };
+export { createElement, createNode, addStyle };
