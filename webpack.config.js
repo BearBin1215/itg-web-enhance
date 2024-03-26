@@ -71,11 +71,25 @@ module.exports = (_, argv) => {
         },
         {
           test: /\.s[ac]ss$/i,
-          use: [
-            'style-loader',
-            'css-loader',
-            postCssLoader,
-            'sass-loader',
+          oneOf: [
+            {
+              assert: {
+                type: 'string',
+              },
+              type: 'asset/source', // css文件作为文本导入
+              use: [
+                postCssLoader,
+                'sass-loader',
+              ],
+            },
+            {
+              use: [
+                'style-loader',
+                'css-loader',
+                postCssLoader,
+                'sass-loader',
+              ],
+            },
           ],
         },
         {

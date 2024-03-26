@@ -1,5 +1,6 @@
 import coding from './coding';
 import jenkins from './jenkins';
+import lbp from './lbp';
 import oa from './oa';
 import rancher from './rancher';
 import './styles/modal.scss';
@@ -10,6 +11,9 @@ switch (location.host) {
     break;
   case 'jenkins.itg.it.org.test':
     jenkins();
+    break;
+  case 'lbp.itg.com.cn':
+    lbp();
     break;
   case 'oa.itg.cn':
     oa();

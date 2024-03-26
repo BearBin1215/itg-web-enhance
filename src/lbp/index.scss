@@ -1,0 +1,19 @@
+.hzero-left-side-callout-layout-container {
+    .hzero-left-side-callout-layout-header-container {
+        .hzero-left-side-callout-layout-header-left {
+            .hzero-left-side-callout-layout-header-logo {
+                justify-content: center;
+                padding-left: 0;
+
+                > a {
+                    flex-direction: column;
+                    justify-content: center;
+
+                    .hzero-left-side-callout-layout-header-title {
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
+}
