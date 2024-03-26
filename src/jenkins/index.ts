@@ -6,6 +6,7 @@ import { copyText } from '@/utils/clipboard';
 import { throttle } from 'lodash-es';
 import './index.scss';
 
+/** 从jenkins构建日志中解析镜像链接 */
 const parseDockerLink = (logText: string) => {
   return logText.match(/(?:imageName|image_name_date) *= *(itg-dtc-docker\.pkg\.coding\.net\/.*\d+|docker-registry\.itg\.com\.cn\/.*\d+)\n?/)?.[1];
 };
@@ -21,7 +22,7 @@ const addCopyLink = () => {
     if (dockerLink && document.getElementById('main-panel')) {
       clearInterval(interval);
       let buttonTimeout: NodeJS.Timeout;
-      const copyButton = createElement('<button class="iew-copy-docker">复制docker链接</button>') as HTMLButtonElement;
+      const copyButton = createElement('<button class="iew-jenkins-copy-docker">复制docker链接</button>') as HTMLButtonElement;
       document.getElementById('main-panel')!.prepend(copyButton);
       copyButton.addEventListener('click', (event) => {
         const target = event.target as HTMLButtonElement;
@@ -66,18 +67,20 @@ const hotSearch = () => {
   }, 300);
 };
 
+/** 读取构建的镜像链接 */
 const latestImageLink = () => {
   const interval = setInterval(() => {
     const mainPanel = document.getElementById('main-panel');
-    const imageLinkZone = createElement('<div class="iew-jenkins-image-links"></div>');
     if (mainPanel) {
       clearInterval(interval);
       let fetchUrl: string;
       let headText: string;
       if (document.querySelector('table.pane.jenkins-pane.stripped')) {
+        // item详情页
         fetchUrl = `${location.pathname}lastBuild/logText/progressiveHtml`;
         headText = '最近一次构建的镜像链接';
       } else {
+        // 构建信息页
         fetchUrl = `${location.pathname}logText/progressiveHtml`;
         headText = '镜像链接';
       }
@@ -102,8 +105,7 @@ const latestImageLink = () => {
                 }, 3000);
               });
             });
-            imageLinkZone.append(dockerLinkAnchor);
-            mainPanel.append(createElement(`<h2>${headText}</h2>`), imageLinkZone);
+            mainPanel.append(createElement(`<h2>${headText}</h2>`), dockerLinkAnchor);
           }
         });
     }
@@ -112,11 +114,14 @@ const latestImageLink = () => {
 
 const jenkins = () => {
   if (location.pathname.includes('/console')) {
+    // 控制台
     addCopyLink();
-  } else if (location.pathname === '/' || location.pathname.includes('/view/')) {
-    hotSearch();
   } else if (location.pathname.includes('/job/')) {
+    // item页
     latestImageLink();
+  } else if (location.pathname === '/' || location.pathname.includes('/view/')) {
+    // 列表页
+    hotSearch();
   }
 };
 

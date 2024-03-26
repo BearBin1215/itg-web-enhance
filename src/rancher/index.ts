@@ -48,7 +48,7 @@ const rancher = () => {
       .filter(([buttonText, searchText]) => buttonText.trim() && searchText.trim())
       .map(([buttonText, searchText]) => {
         const searchInput = document.querySelector('.search-group>input[type="search"]') as HTMLInputElement;
-        const searchButton = createElement(`<a id="iew-search-${buttonText}" class="btn btn-sm bg-primary">${buttonText}</a>`) as HTMLAnchorElement;
+        const searchButton = createElement(`<a class="btn btn-sm bg-primary">${buttonText}</a>`) as HTMLAnchorElement;
         searchButton.addEventListener('click', () => {
           searchInput.value = searchText;
           searchInput.focus();

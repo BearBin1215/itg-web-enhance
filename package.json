@@ -1,6 +1,6 @@
 {
   "name": "itg-web-enhance",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "description": "Enhancement script for ITG webpages",
   "main": "dist/itg-web-enhance.user.js",
   "repository": "https://github.com/BearBin1215/itg-web-enhance.git",
@@ -8,6 +8,12 @@
   "license": "MIT",
   "files": [
     "dist/itg-web-enhance.user.js"
+  ],
+  "tampermonkeyMatches": [
+    "*://docker.itg.com.cn/*",
+    "*://itg-dtc.coding.net/*",
+    "*://jenkins.itg.it.org.test/*",
+    "*://oa.itg.cn/*"
   ],
   "scripts": {
     "start": "webpack --watch --mode development",
@@ -52,12 +58,6 @@
     "classnames": "^2.5.1",
     "lodash-es": "^4.17.21"
   },
-  "tampermonkeyMatches": [
-    "*://docker.itg.com.cn/*",
-    "*://itg-dtc.coding.net/*",
-    "*://jenkins.itg.it.org.test/*",
-    "*://oa.itg.cn/*"
-  ],
   "keywords": [
     "userscript",
     "tampermonkey"

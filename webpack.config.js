@@ -50,16 +50,9 @@ module.exports = (_, argv) => {
             },
           },
         },
-
-        // css文件直接通过raw-loader载入
         {
           test: /\.css$/i,
-          oneOf: [
-            {
-              issuer: /\.ts$/,
-              type: 'asset/source',
-            },
-          ],
+          type: 'asset/source', // css文件作为文本导入
         },
         {
           test: /\.s[ac]ss$/i,

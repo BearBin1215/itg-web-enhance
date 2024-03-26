@@ -1,8 +1,8 @@
-import { createElement } from '@/utils/dom';
+import { addStyle } from '@/utils/dom';
 import styles from './index.css';
 
 const coding = () => {
-  document.head.append(createElement(`<style>${styles}</style>`));
+  addStyle(styles);
 };
 
 export default coding;

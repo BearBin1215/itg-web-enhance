@@ -55,4 +55,13 @@ const createSVG = (
   return element;
 };
 
-export { createElement, createNode, createSVG };
+/**
+ * 添加样式
+ *
+ * @param styles 样式表内容
+ */
+const addStyle = (styles: string) => {
+  document.head.append(createElement(`<style>${styles}</style>`));
+};
+
+export { createElement, createNode, createSVG, addStyle };
