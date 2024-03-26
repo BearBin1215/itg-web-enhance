@@ -132,7 +132,6 @@ const rancher = () => {
       settingTbody.innerHTML = '';
       // 读取存储数据，如果没读取到或内容为空则初始化设为一行，不为空则载入表格
       const storagedSetting = readLocalSetting();
-      console.log(storagedSetting);
       if (storagedSetting?.length) {
         setInputData(storagedSetting);
       } else {
@@ -150,7 +149,6 @@ const rancher = () => {
   const initialPanel = () => {
     const actionsHeader = document.querySelector('.fixed-header-actions.row.clearfix');
     if (actionsHeader && !document.getElementById('iew-rancher-search-panel') && !document.getElementById('iew-rancher-search-setting')) {
-      console.log('init');
       updateButtons(readLocalSetting() || []);
       quickSearchPanel.append(quickSearchButtonZone, settingButton);
       actionsHeader.append(quickSearchPanel);
@@ -158,13 +156,8 @@ const rancher = () => {
   };
 
   const interval = setInterval(() => {
-    // 持续检测页面直到搜索框加载出来
-    const actionsHeader = document.querySelector('.fixed-header-actions.row.clearfix');
-    if (
-      actionsHeader
-      && !document.getElementById('iew-rancher-search-panel')
-      && document.querySelector('section.instances')
-    ) {
+    // 持续检测页面直到负载列表加载出来
+    if (document.querySelector('section.instances')) {
       initialPanel();
       clearInterval(interval);
     }
