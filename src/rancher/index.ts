@@ -143,12 +143,16 @@ const rancher = () => {
     return settingButton;
   };
 
+  /** 搜索设置按钮 */
+  const settingButton = createSettingButton();
+
   /** 初始化快速搜索面板 */
   const initialPanel = () => {
     const actionsHeader = document.querySelector('.fixed-header-actions.row.clearfix');
-    if (actionsHeader && !document.getElementById('iew-rancher-search-panel')) {
+    if (actionsHeader && !document.getElementById('iew-rancher-search-panel') && !document.getElementById('iew-rancher-search-setting')) {
+      console.log('init');
       updateButtons(readLocalSetting() || []);
-      quickSearchPanel.append(quickSearchButtonZone, createSettingButton());
+      quickSearchPanel.append(quickSearchButtonZone, settingButton);
       actionsHeader.append(quickSearchPanel);
     }
   };
