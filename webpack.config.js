@@ -93,7 +93,7 @@ module.exports = (_, argv) => {
           ],
         },
         {
-          test: /\.svg/,
+          test: /\.svg$/,
           oneOf: [
             {
               assert: {

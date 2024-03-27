@@ -67,6 +67,15 @@ const hotSearch = () => {
   }, 300);
 };
 
+const addAccessKey = () => {
+  window.addEventListener('keydown', (e) => {
+    if (e.ctrlKey && e.key === 'g') {
+      e.preventDefault();
+      (document.getElementById('search-box') as HTMLInputElement).focus();
+    }
+  });
+};
+
 /** 读取构建的镜像链接 */
 const latestImageLink = () => {
   const interval = setInterval(() => {
@@ -122,6 +131,7 @@ const jenkins = () => {
   } else if (location.pathname === '/' || location.pathname.includes('/view/')) {
     // 列表页
     hotSearch();
+    addAccessKey();
   }
 };
 

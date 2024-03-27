@@ -10,6 +10,7 @@ module.exports = {
     'comment-empty-line-before': null,
     'no-descending-specificity': null,
     'color-function-notation': null,
+    'selector-class-pattern': null,
     'at-rule-no-unknown': null,
     'at-rule-empty-line-before': [
       'always',

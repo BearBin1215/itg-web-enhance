@@ -155,10 +155,21 @@ const rancher = () => {
     }
   };
 
+  /** 添加ctrl+g聚焦搜索框 */
+  const addAccessKey = () => {
+    window.addEventListener('keydown', (e) => {
+      if (e.ctrlKey && e.key === 'g') {
+        e.preventDefault();
+        (document.querySelector('input[type="search"]') as HTMLInputElement).focus();
+      }
+    });
+  };
+
   const interval = setInterval(() => {
     // 持续检测页面直到负载列表加载出来
     if (document.querySelector('section.instances')) {
       initialPanel();
+      addAccessKey();
       clearInterval(interval);
     }
   }, 500);
