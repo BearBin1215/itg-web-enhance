@@ -167,7 +167,7 @@ const rancher = () => {
 
   const interval = setInterval(() => {
     // 持续检测页面直到负载列表加载出来
-    if (document.querySelector('section.instances')) {
+    if (document.querySelector('section.instances') && document.querySelector('input[type="search"]')) {
       initialPanel();
       addAccessKey();
       clearInterval(interval);
