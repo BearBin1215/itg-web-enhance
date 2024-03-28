@@ -22,7 +22,7 @@ const addCopyLink = () => {
     if (dockerLink && document.getElementById('main-panel')) {
       clearInterval(interval);
       let buttonTimeout: NodeJS.Timeout;
-      const copyButton = createElement('<button class="iew-jenkins-copy-docker">复制docker链接</button>') as HTMLButtonElement;
+      const copyButton = createElement('<button class="iwe-jenkins-copy-docker">复制docker链接</button>') as HTMLButtonElement;
       document.getElementById('main-panel')!.prepend(copyButton);
       copyButton.addEventListener('click', (event) => {
         const target = event.target as HTMLButtonElement;
@@ -100,7 +100,7 @@ const latestImageLink = () => {
           if (dockerLink) {
             let buttonTimeout: NodeJS.Timeout;
             const anchorText = `${dockerLink}（点击复制）`;
-            const dockerLinkAnchor = createElement(`<a class="iew-jenkins-copylink">${anchorText}</a>`);
+            const dockerLinkAnchor = createElement(`<a class="iwe-jenkins-copylink">${anchorText}</a>`);
             dockerLinkAnchor.addEventListener('click', () => {
               copyText(dockerLink).then(() => {
                 clearTimeout(buttonTimeout);

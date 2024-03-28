@@ -1,12 +1,12 @@
 @use "sass:color";
 
-#iew-modal-wrapper {
+#iwe-modal-wrapper {
     position: fixed;
     inset: 0;
     z-index: 10001;
     background-color: rgba(0, 0, 0, 10%);
 
-    .iew-modal {
+    .iwe-modal {
         position: absolute;
         max-width: 96%;
         min-height: 10em;
@@ -17,23 +17,23 @@
         background-color: #fdfdfd;
         box-shadow: 0 0 10px rgba(127, 127, 127, 60%);
 
-        &.iew-modal-small {
+        &.iwe-modal-small {
             width: 300px;
         }
 
-        &.iew-modal-medium {
+        &.iwe-modal-medium {
             width: 540px;
         }
 
-        &.iew-modal-large {
+        &.iwe-modal-large {
             width: 960px;
         }
 
-        &.iew-modal-larger {
+        &.iwe-modal-larger {
             width: 14400px;
         }
 
-        .iew-modal-close {
+        .iwe-modal-close {
             position: absolute;
             top: 0;
             right: 0;
@@ -53,7 +53,7 @@
             }
         }
 
-        .iew-modal-header {
+        .iwe-modal-header {
             padding: 0.5em;
             display: flex;
             justify-content: center;
@@ -62,17 +62,17 @@
             font-weight: 600;
         }
 
-        .iew-modal-content {
+        .iwe-modal-content {
             padding: 1em;
         }
 
-        .iew-modal-footer {
+        .iwe-modal-footer {
             padding: 8px 12px;
             text-align: right;
         }
     }
 
-    .iew-modal-button {
+    .iwe-modal-button {
         $normal-color: #fcfcfc;
         $primary-color: #66d;
 
@@ -93,7 +93,7 @@
             background-color: color.scale($normal-color, $lightness: -5%);
         }
 
-        &.iew-modal-button-confirm {
+        &.iwe-modal-button-confirm {
             color: #fff;
             background-color: $primary-color;
             border: 1px solid $primary-color;

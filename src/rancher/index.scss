@@ -1,4 +1,4 @@
-.iew-rancher {
+.iwe-rancher {
     .fixed-header-actions.row.clearfix {
         height: 80px !important;
     }
@@ -8,7 +8,7 @@
     }
 }
 
-#iew-rancher-search-panel {
+#iwe-rancher-search-panel {
     clear: both;
     text-align: right;
     padding: 8px 0;
@@ -16,12 +16,12 @@
     justify-content: flex-end;
     gap: 26px;
 
-    #iew-rancher-search-buttons {
+    #iwe-rancher-search-buttons {
         display: flex;
         gap: 8px;
     }
 
-    #iew-rancher-search-setting {
+    #iwe-rancher-search-setting {
         margin-right: 0;
     }
 }
@@ -68,7 +68,7 @@
             border: 1px solid #bbb;
         }
 
-        &.iew-rancher-buttontext {
+        &.iwe-rancher-buttontext {
             width: 30%;
         }
 

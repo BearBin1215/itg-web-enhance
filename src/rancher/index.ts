@@ -6,16 +6,16 @@ import createModal from '@/utils/modal';
 import './index.scss';
 
 const rancher = () => {
-  document.body.classList.add('iew-rancher');
+  document.body.classList.add('iwe-rancher');
   /** 快速搜索面板 */
-  const quickSearchPanel = createElement('<div id="iew-rancher-search-panel"></div>');
+  const quickSearchPanel = createElement('<div id="iwe-rancher-search-panel"></div>');
   /** 快速搜索按钮区 */
-  const quickSearchButtonZone = createElement('<div id="iew-rancher-search-buttons"></div>');
+  const quickSearchButtonZone = createElement('<div id="iwe-rancher-search-buttons"></div>');
 
   /** 将表格数据去除全空元素后存储到本地 */
   const saveLocalSetting = (inputData: string[][]) => {
     localStorage.setItem(
-      'iew-rancher-buttons-setting',
+      'iwe-rancher-buttons-setting',
       JSON.stringify(inputData.filter(([buttonText, searchText]) => {
         return buttonText.trim() || searchText.trim();
       })),
@@ -24,7 +24,7 @@ const rancher = () => {
 
   /** 读取本地存储配置并校验有效性 */
   const readLocalSetting = (): string[][] | null => {
-    const storagedSetting = localStorage.getItem('iew-rancher-buttons-setting');
+    const storagedSetting = localStorage.getItem('iwe-rancher-buttons-setting');
     if (storagedSetting) {
       try {
         const storagedSettingData = JSON.parse(storagedSetting);
@@ -82,8 +82,8 @@ const rancher = () => {
     /** 表格添加一行 */
     const addRow = () => {
       const newRow = createElement(`<tr>
-        <td class="iew-rancher-buttontext"><input name="buttonText" /></td>
-        <td class="iew-rancher-searchtext"><input name="searchText" /></td>
+        <td class="iwe-rancher-buttontext"><input name="buttonText" /></td>
+        <td class="iwe-rancher-searchtext"><input name="searchText" /></td>
         <td class="remove-row"><div class="remove-row-button" title="删除本行"></div></td>
         </tr>`);
       // 点击删除按钮去掉本行
@@ -113,7 +113,7 @@ const rancher = () => {
       }
     };
 
-    const settingButton = createElement('<button id="iew-rancher-search-setting" class="btn btn-sm bg-default" type="button">速搜设置</button>') as HTMLButtonElement;
+    const settingButton = createElement('<button id="iwe-rancher-search-setting" class="btn btn-sm bg-default" type="button">速搜设置</button>') as HTMLButtonElement;
     const settingModal = createModal({
       title: '快速搜索设置',
       content: settingTable,
@@ -148,7 +148,7 @@ const rancher = () => {
   /** 初始化快速搜索面板 */
   const initialPanel = () => {
     const actionsHeader = document.querySelector('.fixed-header-actions.row.clearfix');
-    if (actionsHeader && !document.getElementById('iew-rancher-search-panel') && !document.getElementById('iew-rancher-search-setting')) {
+    if (actionsHeader && !document.getElementById('iwe-rancher-search-panel') && !document.getElementById('iwe-rancher-search-setting')) {
       updateButtons(readLocalSetting() || []);
       quickSearchPanel.append(quickSearchButtonZone, settingButton);
       actionsHeader.append(quickSearchPanel);
