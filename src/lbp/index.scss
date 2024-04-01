@@ -3,8 +3,8 @@
         .hzero-left-side-callout-layout-header-container {
             .hzero-left-side-callout-layout-header-left {
                 .hzero-left-side-callout-layout-header-logo {
-                    justify-content: center;
-                    padding-left: 0;
+                    justify-content: center !important;
+                    padding-left: 0 !important;
 
                     > a {
                         flex-direction: column;
