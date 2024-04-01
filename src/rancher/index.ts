@@ -174,7 +174,12 @@ const rancher = () => {
     }
   }, 500);
 
-  document.body.addEventListener('click', initialPanel);
+  document.body.addEventListener('click', () => {
+    if (document.querySelector('section.instances') && document.querySelector('input[type="search"]')) {
+      clearInterval(interval);
+      initialPanel();
+    }
+  });
 };
 
 export default rancher;
