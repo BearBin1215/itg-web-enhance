@@ -1,6 +1,6 @@
 {
   "name": "itg-web-enhance",
-  "version": "1.1.8",
+  "version": "1.1.9",
   "description": "Enhancement script for ITG webpages",
   "main": "dist/itg-web-enhance.user.js",
   "repository": "https://github.com/BearBin1215/itg-web-enhance.git",
