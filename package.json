@@ -1,6 +1,6 @@
 {
   "name": "itg-web-enhance",
-  "version": "1.1.9",
+  "version": "1.1.10",
   "description": "Enhancement script for ITG webpages",
   "main": "dist/itg-web-enhance.user.js",
   "repository": "https://github.com/BearBin1215/itg-web-enhance.git",
@@ -14,7 +14,9 @@
     "*://itg-dtc.coding.net/*",
     "*://lbp.itg.com.cn/*",
     "*://jenkins.itg.it.org.test/*",
-    "*://oa.itg.cn/*"
+    "*://oa.itg.cn/*",
+    "*://fssc.itg.it.org/*",
+    "*://fssc.itg.com.cn/*"
   ],
   "scripts": {
     "start": "webpack --watch --mode development",

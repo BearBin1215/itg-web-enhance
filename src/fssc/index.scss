@@ -1,0 +1,14 @@
+div[class*="platform-flow-workflowlist-index__tBodyContent"] {
+    > div[class*="platform-creditmanagement-commonStyles"] {
+        position: sticky;
+        top: 0;
+        z-index: 2;
+        box-shadow: 0 0 5px rgba(127, 127, 127, 75%);
+    }
+
+    > div[class*="platform-flow-workflowlist-index"] {
+        div.ant-table-body {
+            max-height: 280px;
+        }
+    }
+}
