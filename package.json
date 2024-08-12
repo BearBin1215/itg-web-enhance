@@ -3,7 +3,10 @@
   "version": "1.1.10",
   "description": "Enhancement script for ITG webpages",
   "main": "dist/itg-web-enhance.user.js",
-  "repository": "git+https://github.com/BearBin1215/itg-web-enhance.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BearBin1215/itg-web-enhance.git"
+  },
   "author": "BearBin",
   "license": "MIT",
   "files": [
