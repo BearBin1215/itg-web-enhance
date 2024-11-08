@@ -13,3 +13,8 @@
 .t-popup__content.t-popup__content--arrow {
     padding: 1em;
 }
+
+[class*="commit-content"] time::after {
+    content: " （" attr(title) "）";
+    font-size: 0.95em;
+}
