@@ -9,6 +9,7 @@ import packageJson from '../package.json' assert { type: 'json' };
 const userScriptBanner = `
 // ==UserScript==
 // @name            itg-web-enhance
+// @namespace       https://github.com/BearBin1215/itg-web-enhance
 // @description     ITG相关页面（OA、Rancher等）加强
 // @version         ${packageJson.version}
 // @author          BearBin
